@@ -1,0 +1,43 @@
+.header {
+  border-bottom: 1px solid $header-border-color;
+
+  &__container {
+    @include set-flex(row, flex-start);
+    align-content: center;
+    padding: 24px 0 25px;
+    gap: 93px;
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__contact {
+    @include set-flex(row);
+    column-gap: 50px;
+    margin-left: auto;
+  }
+
+  &__icon {
+    @extend .icon;
+    margin-right: 10px;
+  }
+
+  &__icon--email {
+    @extend .header__icon;
+    margin-top: 2px;
+  }
+
+  &__link {
+    @extend .link;
+    @include set-flex(row, flex-start, stretch);
+    @include font-atr(500, 1.14, 0.02em);
+    color: $primary-text-color;
+  }
+
+  &__nav {
+    @extend .list;
+    @include set-flex(row, flex-start, stretch);
+    @include font-atr(500, 1.14, 0.02em);
+    color: $bolded-text-color;
+    column-gap: 46px;
+  }
+}
