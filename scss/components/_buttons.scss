@@ -21,15 +21,17 @@
 
   &--color-main {
     @extend .button;
+    margin: 0 auto;
     background-color: $button-icon-color;
     transition: background-color 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
   }
 
   &--color-main:hover {
     background-color: $section-background-color;
     outline: none;
   }
-  &--subscribe {
+  &--left {
     @extend .button;
     @extend .button--color-main;
     padding: 0 0 0 42px;
@@ -46,12 +48,10 @@
   color: $bolded-text-color;
   background-color: $button-background;
   border-radius: 4px;
-  margin: 0 0 50px;
+  margin: 0;
   padding: 6px 22px;
   transition-property: color, background-color, box-shadow;
   @include vis-effect();
-  // transition-duration: 250ms;
-  // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:focus,
   &:hover {
@@ -73,26 +73,20 @@
   border: 1px solid $button-border-close;
   padding: 9px;
   transition: background-color 1s ease, border 1s ease;
-  cursor: pointer;
 
   &:hover {
-    border: 1px solid $button-icon-color;
-    fill: $button-icon-color;
-  }
-  &:hover &__icon {
-    fill: $button-icon-color;
+    background-color: $section-background-color;
+    border: 1 px solid $button-icon-color;
+    fill: $button-text-color;
   }
   &__icon {
     @extend .icon;
-    position: absolute;
-    right: 8px;
-    top: 9px;
     width: 11px;
     height: 11px;
     fill: $bolded-text-color;
     transition: fill 1s ease;
   }
   &__icon:hover {
-    fill: $button-icon-color;
+    fill: $button-text-color;
   }
 }

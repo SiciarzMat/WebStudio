@@ -1,13 +1,26 @@
 .header {
   border-bottom: 1px solid $header-border-color;
+  position: relative;
 
   &__container {
     @include set-flex(row, flex-start);
-    align-content: center;
-    padding: 24px 0 25px;
+    padding: 16px 15px;
     gap: 93px;
-    width: 1200px;
+    min-width: 320px;
+    max-width: 1200px;
     margin: 0 auto;
+  }
+
+  &__icon-mail {
+    @extend .icon;
+    width: 14px;
+    height: 10px;
+  }
+
+  &__icon-phone {
+    @extend .icon;
+    width: 10px;
+    height: 14px;
   }
 
   &__contact {
@@ -16,28 +29,48 @@
     margin-left: auto;
   }
 
-  &__icon {
-    @extend .icon;
-    margin-right: 10px;
-  }
-
-  &__icon--email {
-    @extend .header__icon;
-    margin-top: 2px;
-  }
-
   &__link {
     @extend .link;
-    @include set-flex(row, flex-start, stretch);
-    @include font-atr(500, 1.14, 0.02em);
-    color: $primary-text-color;
+    @include set-flex(row, flex-start, center);
+    column-gap: 10px;
+    font-size: get-size("mobile-link-cotants");
+    line-height: 1.16;
   }
 
-  &__nav {
+  &__list {
     @extend .list;
     @include set-flex(row, flex-start, stretch);
     @include font-atr(500, 1.14, 0.02em);
     color: $bolded-text-color;
     column-gap: 46px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__container {
+    padding: 21px 15px;
+    column-gap: 83px;
+  }
+
+  .header__list {
+    flex-wrap: nowrap;
+    column-gap: 60px;
+  }
+
+  .header__contact {
+    @include set-flex(column, center, baseline);
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header__contact {
+    @include set-flex(row, center, baseline);
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .header__container {
+    padding: 24px 0 25px 0;
   }
 }

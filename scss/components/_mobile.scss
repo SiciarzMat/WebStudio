@@ -1,0 +1,120 @@
+.menu {
+  @include set-flex(row);
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+
+@media (max-width: 767px) {
+  .menu {
+    display: none;
+  }
+}
+.mobile-address {
+  &__phone {
+    @extend .link;
+    display: block;
+    @include font-atr(400, 1.1, 0.02em);
+    font-size: get-size("mobile-phone");
+    color: $link-text-color;
+    margin: 302px 0 32px 0;
+  }
+
+  &__mail {
+    @extend .link;
+    display: block;
+    @include font-atr(500, 1.17, 0.02em);
+    font-size: get-size("mobile-mail");
+  }
+}
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: $primary-background-color;
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 250ms ease-in-out;
+}
+.menu-toggle {
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  @include set-flex(row);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  outline: none;
+  background-color: transparent;
+
+  &:hover {
+    fill: $button-icon-color;
+  }
+
+  &--close {
+    @extend .menu-toggle;
+    top: 21px;
+    right: 25.33px;
+  }
+}
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  list-style: none;
+  padding-left: 0;
+  @include font-atr(500, 1.18, 0.02em);
+  font-size: get-size("mobile-menu");
+  margin: 0;
+
+  &__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    @extend .link;
+    color: $bolded-text-color;
+
+    &--active {
+      @extend .link;
+      @extend .mobile-menu__link;
+      color: $link-text-color;
+    }
+  }
+}
+.mobile-socials {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  font-size: get-size("mobile-social");
+  @include font-atr(500, 1.22, 0.02em);
+  padding-left: 0;
+  margin-top: 64px;
+  margin-bottom: 0;
+  min-width: 320px;
+
+  &__item:not(:last-child) {
+    border-right: 1px solid $mobile-social-border;
+    padding-right: 10px;
+    margin-right: 10px;
+  }
+
+  &__link {
+    @extend .link;
+    text-decoration: none;
+    color: $link-text-color;
+  }
+}
+.is-open {
+  transform: translateX(0);
+}

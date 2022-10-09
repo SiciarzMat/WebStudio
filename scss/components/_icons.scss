@@ -21,6 +21,7 @@
     border-radius: 50%;
     transition-property: fill, background-color;
     @include vis-effect();
+    margin-bottom: 24px;
 
     &:hover {
       fill: $primary-background-color;
@@ -31,17 +32,26 @@
   &--activities {
     @extend .icon;
     border: 1px solid $icon-fill-primary;
+    display: block;
     border-radius: 4px;
-    width: 170px;
+    width: 210px;
     height: 92px;
     fill: $icon-fill-primary;
     transition-property: fill;
     @include vis-effect();
+    padding: 16px 0 0 52px;
 
     &:hover,
     &:focus {
       fill: $button-icon-color;
       border: 1px solid $button-icon-color;
     }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .icon--activities {
+    width: 170px;
+    padding: 17.71px 0 0 32px;
   }
 }

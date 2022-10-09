@@ -108,4 +108,14 @@
     border: 1px solid $button-icon-color;
     border-radius: 2px;
   }
+
+  &__declaration {
+    font-size: get-size("form-mobile-declaration");
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form__declaration {
+    font-size: get-size("footer");
+  }
 }

@@ -20,6 +20,7 @@ $form-std-color: rgba(117, 117, 117, 0.5);
 $modal-background-color: rgba(0, 0, 0, 0.2);
 $modal-box-shadow-primary: rgba(0, 0, 0, 0.12);
 $modal-box-shadow-secondary: rgba(0, 0, 0, 0.14);
+$section-top-background: #2f303a66;
 $footer-link-color: rgba(255, 255, 255, 0.6);
 $footer-input-color: rgba(255, 255, 255, 0.3);
 $footer-shadow-color: rgba(0, 0, 0, 0.15);
@@ -27,7 +28,8 @@ $footer-icon-background: rgba(255, 255, 255, 0.1);
 $figure-background: rgba(47, 48, 58, 0.8);
 $product-border: #eeeeee;
 $image-shadow-secondary: rgba(0, 0, 0, 0.06);
-$image-shadow-third: rgba(0, 0, 0, 0.16);
+$image-shadow-thrid: rgba(0, 0, 0, 0.16);
+$mobile-social-border: rgba(33, 33, 33, 0.2);
 
 $site-fonts: "Roboto", "Raleway", sans-serif;
 
@@ -37,6 +39,7 @@ $font-size: (
   "footer": 14px,
   "form-header": 20px,
   "form-lbl": 12px,
+  "form-mobile-declaration": 12px,
   "form-terms": 14px,
   "overlay": 18px,
   "img-heading": 16px,
@@ -44,4 +47,14 @@ $font-size: (
   "top-section": 44px,
   "product-desc": 14px,
   "logo": 26px,
+  "mobile-social": 18px,
+  "mobile-phone": 34px,
+  "mobile-mail": 24px,
+  "mobile-menu": 40px,
+  "mobile-logo": 24px,
+  "mobile-heading": 28px,
+  "mobile-small-text": 14px,
+  "mobile-top-section": 26px,
+  "mobile-link-cotants": 12px,
+  "mobile-logo-dekstop": 26px,
 );

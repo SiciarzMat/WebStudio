@@ -1,25 +1,28 @@
 .section {
-  padding: 94px 0;
+  padding: 60px 0;
 
   &__heading {
     @include font-atr(700, 1.17, 0.03em);
-    font-size: get-size("main-header");
+    font-size: get-size("mobile-heading");
     text-align: center;
     color: $bolded-text-color;
-    margin: 0 0 50px;
+    margin: 0 0 30px;
+  }
+
+  &--mobile-hidden {
+    @extend .section;
+    display: none;
   }
 
   &__container {
-    width: 1200px;
+    min-width: 320px;
+    max-width: 1170px;
     margin: 0 auto;
 
     &--gap {
       @extend .section__container;
       margin-bottom: 94px;
     }
-  }
-  &:nth-child(2) {
-    padding-bottom: 0;
   }
 
   &__figure {
@@ -32,13 +35,12 @@
   &__figure-desc {
     @include font-atr(700, 1.14, 0.03em);
     position: absolute;
-    font-size: get-size ("product-desc");
+    font-size: get-size("product-desc");
     text-align: center;
     text-transform: uppercase;
     color: $button-text-color;
     background: $figure-background;
     padding: 27px 0;
-
     width: 100%;
     bottom: 0;
   }
@@ -47,11 +49,34 @@
     @extend .section;
     background-color: $button-background;
     width: 100%;
-    padding: 94px 0;
+    padding: 60px 0;
   }
 
   &__list {
     @extend .list;
-    column-gap: 8px;
+    gap: 15px 8px;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 480px) {
+  .section__list {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .section__container {
+    padding: 0 15px 0;
+    width: 768px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section__container {
+    width: 1170px;
+    padding: 0;
   }
 }

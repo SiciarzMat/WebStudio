@@ -1,5 +1,5 @@
 .list {
-  @include set-flex(row, center, stretch);
+  @include set-flex(row);
   gap: 30px;
   flex-wrap: wrap;
   list-style-type: none;
@@ -9,29 +9,35 @@
 
   &__icon {
     @include set-flex(row);
-    width: 270 px;
+    min-width: 270px;
+    max-width: 450px;
     height: 120px;
     background-color: $button-background;
-    margin-bottom: 30px;
-    padding: 25px auto;
+    margin: 0 auto 30px;
+    padding: 25px 0;
     border-radius: 4px;
   }
   &--gap {
     @extend .list;
-    column-gap: 10px;
-    padding-bottom: 30px;
+    gap: 10px;
   }
 
   &__heading {
-    line-height: 1.14;
+    font-size: get-size("mobile-small-heading");
+    @include font-atr(700, 1.14, 0.03em);
     text-transform: uppercase;
+    text-align: center;
     color: $bolded-text-color;
     margin: 0 0 10px;
   }
   &__description {
-    line-height: 1.71;
-    width: 270px;
+    font-size: get-size("mobile-small-text");
+    @include font-atr(400, 1.71, 0.03em);
+    padding: 0 15px;
+    margin: 0;
+    max-width: 450px;
   }
+
   &__item {
     background-color: $primary-background-color;
     box-shadow: 0px 1px 3px $modal-box-shadow-primary,
@@ -41,5 +47,62 @@
   }
   &__position {
     position: relative;
+  }
+  &__products {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 768px) {
+  .list__icon {
+    width: 354px;
+  }
+  .list__description {
+    width: 354px;
+    padding: 0;
+  }
+  .list__heading {
+    text-align: left;
+    width: 354px;
+  }
+  .list__item {
+    width: 354px;
+  }
+  .list__products {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+  .img-container-secondary {
+    height: 440px;
+  }
+  .list {
+    @include set-flex(row);
+    gap: 30px;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0 auto;
+    letter-spacing: 0.03em;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1200px) {
+  .list__products {
+    flex-basis: calc((100% - 60px) / 3);
+  }
+  .list__item {
+    width: 270px;
+  }
+  .list__icon {
+    width: 270px;
+  }
+  .list__description {
+    width: 270px;
+  }
+  .list__heading {
+    width: 270px;
+  }
+  .img-container-secondary {
+    height: auto;
   }
 }

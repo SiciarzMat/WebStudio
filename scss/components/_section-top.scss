@@ -1,29 +1,54 @@
 .section-top {
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    $section-background-color;
+  min-width: 320px;
+  background-color: $section-background-color;
 
   &__layout {
     @include set-flex(column);
-    padding: 200px 0 200px;
-    width: 1600px;
-    // background-color: $section-top-background;
-    // background-image: url(../images/background.jpg);
+    padding: 118px 0 118px;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url("../images/background.jpg"), $section-background-color;
-
     background-size: cover;
-
+    background-repeat: no-repeat;
     margin: 0 auto;
+    width: 100%;
   }
 
   &__header {
     @include font-atr(900, 1.36, 0.06em);
-    font-size: get-size("top-section");
+    font-size: get-size("mobile-top-section");
     text-align: center;
     text-transform: uppercase;
     color: $button-text-color;
-    margin: 0 0 20px;
+    margin: 0;
     display: block;
+
+    &--margin {
+      @extend .section-top__header;
+      margin-bottom: 30px;
+    }
+  }
+}
+@media (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .section-top__layout {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("/images/background@2x.jpg"), $section-background-color;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .section-top__layout {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 200px 0;
+  }
+  .section-top__header {
+    @include font-atr(900, 1.36, 0.06em);
+    font-size: get-size("top-section");
   }
 }

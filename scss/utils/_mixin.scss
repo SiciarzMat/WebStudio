@@ -1,4 +1,8 @@
-@mixin set-flex($flex-direction, $justify-content: center, $align-items: center) {
+@mixin set-flex(
+  $flex-direction,
+  $justify-content: center,
+  $align-items: center
+) {
   display: flex;
   flex-direction: $flex-direction;
   justify-content: $justify-content;
@@ -13,8 +17,9 @@
   transition-duration: $duration;
   transition-timing-function: $timing;
 }
-// @mixin border-std ($color){
-//     border-style: solid;
-//     border-width: 1px;
-//     border-color: $color;
-// }
+@mixin responsive-bg-image($image-width, $image-height) {
+  background-size: 100%;
+  height: 0;
+  padding-bottom: percentage($image-height / $image-width);
+  display: block;
+}
