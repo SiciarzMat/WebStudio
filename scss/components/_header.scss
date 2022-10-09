@@ -32,9 +32,11 @@
   &__link {
     @extend .link;
     @include set-flex(row, flex-start, center);
+    @include font-atr(500, 1.16, 0.02em);
     column-gap: 10px;
-    font-size: get-size("mobile-link-cotants");
+    font-size: 14px;
     line-height: 1.16;
+    color: $primary-text-color;
   }
 
   &__list {

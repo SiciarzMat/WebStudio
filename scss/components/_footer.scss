@@ -5,6 +5,7 @@
 
   &__address {
     @include font-atr(400, 1.71, 0.03em);
+    // @include set-flex(column,flex-start,stretch);
     @include set-flex(column);
     row-gap: 8px;
     margin: 0;
@@ -95,6 +96,7 @@
 
 @media (min-width: 1200px) {
   .footer__container {
+    display: flex;
     flex-direction: row;
     align-items: baseline;
     text-align: left;

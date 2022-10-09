@@ -73,14 +73,20 @@
   border: 1px solid $button-border-close;
   padding: 9px;
   transition: background-color 1s ease, border 1s ease;
+  cursor: pointer;
 
   &:hover {
-    background-color: $section-background-color;
-    border: 1 px solid $button-icon-color;
-    fill: $button-text-color;
+    border: 1px solid $button-icon-color;
+    fill: $button-icon-color;
+  }
+  &:hover &__icon {
+    fill: $button-icon-color;
   }
   &__icon {
     @extend .icon;
+    position: absolute;
+    right: 8px;
+    top: 9px;
     width: 11px;
     height: 11px;
     fill: $bolded-text-color;
