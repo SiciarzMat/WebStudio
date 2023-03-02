@@ -1,1 +1,4 @@
-# goit-markup-hw-08
+# WebStudio
+
+A simple website with a responsive layout. Made as an excercise to go through HTML/CSS basics.
+
